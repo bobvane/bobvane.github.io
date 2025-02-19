@@ -1,6 +1,8 @@
 # bobvane.github.io
 BobVane的技术笔记
 
+https://bobvane.github.io
+
 登录Github账号，创建一个Token；
 点击右上角个人头像
 点击左侧列表选择：Settings【设置】
