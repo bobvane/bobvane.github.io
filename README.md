@@ -25,6 +25,7 @@ New personal access token：完善新的个人访问令牌信息
 项目设置中的GitHub Pages设置里面分支设置成master/root，保存。
 
 Blog编辑器：
+
 https://gridea.dev/
 
 https://github.com/getgridea/gridea
