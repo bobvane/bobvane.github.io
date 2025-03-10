@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://bobvane.github.io</id>
+    <title>BobVane的技术笔记</title>
+    <updated>2025-03-10T12:57:03.321Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://bobvane.github.io"/>
+    <link rel="self" href="https://bobvane.github.io/atom.xml"/>
+    <subtitle>BobVane的技术笔记</subtitle>
+    <logo>https://bobvane.github.io/images/avatar.png</logo>
+    <icon>https://bobvane.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, BobVane的技术笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[定制OpenWrt_Build_x64软路由系统]]></title>
+        <id>https://bobvane.github.io/post/ding-zhi-openwrt_build_x64-ruan-lu-you-xi-tong/</id>
+        <link href="https://bobvane.github.io/post/ding-zhi-openwrt_build_x64-ruan-lu-you-xi-tong/">
+        </link>
+        <updated>2025-03-09T12:53:35.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mac软件下载神站]]></title>
+        <id>https://bobvane.github.io/post/mac-ruan-jian-xia-zai-shen-zhan/</id>
+        <link href="https://bobvane.github.io/post/mac-ruan-jian-xia-zai-shen-zhan/">
+        </link>
+        <updated>2025-03-09T05:04:40.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown超链接如何在新窗口中打开]]></title>
+        <id>https://bobvane.github.io/post/markdown-chao-lian-jie-ru-he-zai-xin-chuang-kou-zhong-da-kai/</id>
+        <link href="https://bobvane.github.io/post/markdown-chao-lian-jie-ru-he-zai-xin-chuang-kou-zhong-da-kai/">
+        </link>
+        <updated>2025-02-24T03:35:18.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[检查IP各种属性的网站]]></title>
+        <id>https://bobvane.github.io/post/jian-cha-ip-ge-chong-shu-xing-de-wang-zhan/</id>
+        <link href="https://bobvane.github.io/post/jian-cha-ip-ge-chong-shu-xing-de-wang-zhan/">
+        </link>
+        <updated>2025-02-24T03:03:43.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PeaNUT：网络不间断电源（UPS）的微型仪表板]]></title>
+        <id>https://bobvane.github.io/post/peanutwang-luo-bu-jian-duan-dian-yuan-upsde-wei-xing-yi-biao-ban/</id>
+        <link href="https://bobvane.github.io/post/peanutwang-luo-bu-jian-duan-dian-yuan-upsde-wei-xing-yi-biao-ban/">
+        </link>
+        <updated>2025-02-21T06:41:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows精简系统AtlasOS]]></title>
+        <id>https://bobvane.github.io/post/windows-jing-jian-xi-tong-atlasos/</id>
+        <link href="https://bobvane.github.io/post/windows-jing-jian-xi-tong-atlasos/">
+        </link>
+        <updated>2025-02-21T05:06:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>对 Windows 的修改，专为爱好者设计。<br>
+是时候体验全新的 Windows 了。Atlas 专为发烧友和游戏玩家设计，可提高隐私性、可用性和性能。<br>
+项目地址：<br>
+https://atlasos.net/<br>
+https://github.com/Atlas-OS/Atlas</p>
+<p>1、精简系统前提是安装好原版的Windows系统，在安装中：<br>
+Win11：安装到设置语言，随后选择键盘布局；<br>
+按 Shift+F10 打开命令提示符；<br>
+输入oobe\bypassnro，按 Enter，然后等待计算机重新启动（如使用Ventoy，则不需要此步骤）；<br>
+继续安装，但：不连接到internet，拒绝隐私部分中的每个选项。<br>
+Win10：完成设置，但请确保：<br>
+当提示连接到internet时，单击“我没有internet”；<br>
+点击“internet”页面后继续有限设置或域加入；<br>
+拒绝隐私部分中的每个选项；<br>
+拒绝Cortana。</p>
+<p>2、安装好硬件驱动并更新Windows系统，直到没有更多更新可用，这是为了确保Windows不会在运行Playbook后尝试安装更新，或者以其他方式干扰改进过程；</p>
+<p>3、下载AME Wizard程序安装，运行AME Wizard Beta.exe。<br>
+AME向导是一个修改Windows的终极工具。AtlasOS和ReviOS两个精简系统都是通过在AME里运行Playbook来达成Windows系统的优化。<br>
+AME主页：<br>
+https://ameliorated.io/<br>
+AME也有精简臃肿Win10和Win11的脚本，官方下载版本：<br>
+Win11：https://download.ameliorated.io/AME%2011%20Beta.apbx<br>
+Win10：https://download.ameliorated.io/AME%2010%20Beta.apbx<br>
+<img src="https://bobvane.github.io/post-images/1740109822229.png" alt="" loading="lazy"></p>
+<p>4、在atlasos.net网站上，单击“Get  Started Now”，然后单击-&gt; I'm following the guide,show me the downloads。的点击“Atlas Playbook”下载AtlasOS脚本并解压。</p>
+<p>5、如果选择了手动安装驱动程序，请从结业的Atlas Playbook脚本中运行Disable Drivers Installation in Windows Update.reg并重新启动。</p>
+<p>6、从AME  Wizard文件夹中运行AME Wizard Beta.exe，如果SmartScreen发出警告，指出AME Wizard是无法识别的应用程序，请单击“更多信息”绕过此警告，然后仍然运行。单击顶部的更新，并确保AME Wizard是最新版本。</p>
+<p>7、将 Atlas Playbook.apbx 从Atlas Playbook文件夹拖到AME Wizard中。</p>
+<p>8、按照AME Wizard的屏幕说明安装Atlas Playbook。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>对 Windows 的修改，专为爱好者设计。<br>
+是时候体验全新的 Windows 了。Atlas 专为发烧友和游戏玩家设计，可提高隐私性、可用性和性能。<br>
+项目地址：<br>
+https://atlasos.net/<br>
+https://github.com/Atlas-OS/Atlas</p>
+<p>1、精简系统前提是安装好原版的Windows系统，在安装中：<br>
+Win11：安装到设置语言，随后选择键盘布局；<br>
+按 Shift+F10 打开命令提示符；<br>
+输入oobe\bypassnro，按 Enter，然后等待计算机重新启动（如使用Ventoy，则不需要此步骤）；<br>
+继续安装，但：不连接到internet，拒绝隐私部分中的每个选项。<br>
+Win10：完成设置，但请确保：<br>
+当提示连接到internet时，单击“我没有internet”；<br>
+点击“internet”页面后继续有限设置或域加入；<br>
+拒绝隐私部分中的每个选项；<br>
+拒绝Cortana。</p>
+<p>2、安装好硬件驱动并更新Windows系统，直到没有更多更新可用，这是为了确保Windows不会在运行Playbook后尝试安装更新，或者以其他方式干扰改进过程；</p>
+<p>3、下载AME Wizard程序安装，运行AME Wizard Beta.exe。<br>
+AME向导是一个修改Windows的终极工具。AtlasOS和ReviOS两个精简系统都是通过在AME里运行Playbook来达成Windows系统的优化。<br>
+AME主页：<br>
+https://ameliorated.io/<br>
+AME也有精简臃肿Win10和Win11的脚本，官方下载版本：<br>
+Win11：https://download.ameliorated.io/AME%2011%20Beta.apbx<br>
+Win10：https://download.ameliorated.io/AME%2010%20Beta.apbx<br>
+<img src="https://bobvane.github.io/post-images/1740109822229.png" alt="" loading="lazy"></p>
+<p>4、在atlasos.net网站上，单击“Get  Started Now”，然后单击-&gt; I'm following the guide,show me the downloads。的点击“Atlas Playbook”下载AtlasOS脚本并解压。</p>
+<p>5、如果选择了手动安装驱动程序，请从结业的Atlas Playbook脚本中运行Disable Drivers Installation in Windows Update.reg并重新启动。</p>
+<p>6、从AME  Wizard文件夹中运行AME Wizard Beta.exe，如果SmartScreen发出警告，指出AME Wizard是无法识别的应用程序，请单击“更多信息”绕过此警告，然后仍然运行。单击顶部的更新，并确保AME Wizard是最新版本。</p>
+<p>7、将 Atlas Playbook.apbx 从Atlas Playbook文件夹拖到AME Wizard中。</p>
+<p>8、按照AME Wizard的屏幕说明安装Atlas Playbook。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows精简系统ReviOS]]></title>
+        <id>https://bobvane.github.io/post/jing-jian-xi-tong-revios/</id>
+        <link href="https://bobvane.github.io/post/jing-jian-xi-tong-revios/">
+        </link>
+        <updated>2025-02-21T03:24:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>ReviOS是Windows的定制版本，设计轻巧，稳定，和专注于提高性能，隐私和兼容性。它渴望重新创建Windows作为操作系统应该是什么-容易和简单。现在与AME向导兼容。</p>
+<p>项目地址：<br>
+https://www.revi.cc/<br>
+https://github.com/meetrevision/playbook</p>
+<p>1、精简系统前提是安装好原版的Windows系统后并更新Windows系统完毕，这是为了确保Windows不会在运行Playbook后尝试安装更新，或者以其他方式干扰改进过程。；</p>
+<p>2、下载AME Wizard程序安装，运行AME Wizard Beta.exe。<br>
+AME向导是一个修改Windows的终极工具。AtlasOS和ReviOS两个精简系统都是通过在AME里运行Playbook来达成Windows系统的优化。<br>
+AME主页：<br>
+https://ameliorated.io/<br>
+AME也有精简臃肿Win10和Win11的脚本，官方下载版本：<br>
+Win11：https://download.ameliorated.io/AME%2011%20Beta.apbx<br>
+Win10：https://download.ameliorated.io/AME%2010%20Beta.apbx<br>
+<img src="https://bobvane.github.io/post-images/1740109822229.png" alt="" loading="lazy"></p>
+<p>3、然后下载好ReviOS的.apbx结尾文件，比如：Revi-PB-24.12.apbx。然后将ReviOS的Playbook文件也就是.apbx文件拖放到AME Wizard软件界面左边的Playbooks列。加载后，根据需要按照屏幕上的所有说明进行操作，然后单击“下一步”继续。在下一页上，AME向导将检查您的系统是否满足必要的要求。根据需要按照屏幕上的说明准备系统。满足所有要求后，导航至下一页，并阅读许可协议。选择“下一步”&gt;“同意”，您将进入最后一页。在这里，您可以选择您选择的功能，或者单击下一步继续使用默认配置。一旦开始ReviOS脚本的设置，脚本将开始修改Windows。只需等待它完成，在重新启动后拥有ReviOS精简的Windows系统。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>ReviOS是Windows的定制版本，设计轻巧，稳定，和专注于提高性能，隐私和兼容性。它渴望重新创建Windows作为操作系统应该是什么-容易和简单。现在与AME向导兼容。</p>
+<p>项目地址：<br>
+https://www.revi.cc/<br>
+https://github.com/meetrevision/playbook</p>
+<p>1、精简系统前提是安装好原版的Windows系统后并更新Windows系统完毕，这是为了确保Windows不会在运行Playbook后尝试安装更新，或者以其他方式干扰改进过程。；</p>
+<p>2、下载AME Wizard程序安装，运行AME Wizard Beta.exe。<br>
+AME向导是一个修改Windows的终极工具。AtlasOS和ReviOS两个精简系统都是通过在AME里运行Playbook来达成Windows系统的优化。<br>
+AME主页：<br>
+https://ameliorated.io/<br>
+AME也有精简臃肿Win10和Win11的脚本，官方下载版本：<br>
+Win11：https://download.ameliorated.io/AME%2011%20Beta.apbx<br>
+Win10：https://download.ameliorated.io/AME%2010%20Beta.apbx<br>
+<img src="https://bobvane.github.io/post-images/1740109822229.png" alt="" loading="lazy"></p>
+<p>3、然后下载好ReviOS的.apbx结尾文件，比如：Revi-PB-24.12.apbx。然后将ReviOS的Playbook文件也就是.apbx文件拖放到AME Wizard软件界面左边的Playbooks列。加载后，根据需要按照屏幕上的所有说明进行操作，然后单击“下一步”继续。在下一页上，AME向导将检查您的系统是否满足必要的要求。根据需要按照屏幕上的说明准备系统。满足所有要求后，导航至下一页，并阅读许可协议。选择“下一步”&gt;“同意”，您将进入最后一页。在这里，您可以选择您选择的功能，或者单击下一步继续使用默认配置。一旦开始ReviOS脚本的设置，脚本将开始修改Windows。只需等待它完成，在重新启动后拥有ReviOS精简的Windows系统。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LTSC版本安装微软商店2021/2024]]></title>
+        <id>https://bobvane.github.io/post/ltsc-ban-ben-an-zhuang-wei-ruan-shang-dian-20212024/</id>
+        <link href="https://bobvane.github.io/post/ltsc-ban-ben-an-zhuang-wei-ruan-shang-dian-20212024/">
+        </link>
+        <updated>2025-02-21T03:05:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[下载官方原版Windows/Office]]></title>
+        <id>https://bobvane.github.io/post/xia-zai-guan-fang-yuan-ban-windowsoffice/</id>
+        <link href="https://bobvane.github.io/post/xia-zai-guan-fang-yuan-ban-windowsoffice/">
+        </link>
+        <updated>2025-02-21T02:54:46.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mac磁盘工具NTFS For Mac 15]]></title>
+        <id>https://bobvane.github.io/post/mac-ci-pan-gong-ju-ntfs-for-mac-15/</id>
+        <link href="https://bobvane.github.io/post/mac-ci-pan-gong-ju-ntfs-for-mac-15/">
+        </link>
+        <updated>2025-02-19T08:04:28.000Z</updated>
+    </entry>
+</feed>
