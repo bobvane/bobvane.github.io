@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Markdown超链接如何在新窗口中打开 | BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1742535253393">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="Markdown中的超链接默认是当前窗口打开，也就是点击之后当前网页就跳转了，这样很影响观看体验。
+原始的超链接语法这样写：
+[超链接的名字](url)
+
+在新窗口中打开：
+[超链接的名字](url?_blank)
+
+在本窗口中打开：
+[超..." />
+    <meta name="keywords" content="Blog" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1742535253393" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://nz.bobvane.top/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Markdown超链接如何在新窗口中打开</h2>
+            <div class="post-date">2025-02-24</div>
+            
+              <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/markdown-chao-lian-jie-ru-he-zai-xin-chuang-kou-zhong-da-kai.jpeg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>Markdown中的超链接默认是当前窗口打开，也就是点击之后当前网页就跳转了，这样很影响观看体验。</p>
+<p>原始的超链接语法这样写：</p>
+<pre><code>[超链接的名字](url)
+</code></pre>
+<p>在新窗口中打开：</p>
+<pre><code>[超链接的名字](url?_blank)
+</code></pre>
+<p>在本窗口中打开：</p>
+<pre><code>[超链接的名字](url?_self) #默认是在本窗口中打开
+</code></pre>
+<p>以上几种方法测试下来都没有用，都是在当前窗口打开。</p>
+<p>方法一</p>
+<pre><code>[超链接的名字](url){target=&quot;_blank&quot;}
+</code></pre>
+<p>注意：<br>
+1.{target=&quot;_blank&quot;} 代码需要Markdown解析器支持<br>
+2.有的代码是 {:target=&quot;_blank&quot;} ，如果上边的代码不好用，可以试试这种格式</p>
+<p>如果上述代码都不能用，可以直接写html代码。但不一定总是生效，如果没有生效，看一下页面源代码。<br>
+方法二</p>
+<pre><code>&lt;a href=&quot;url&quot; target=&quot;_blank&quot;&gt;超链接的名字&lt;/a&gt;
+</code></pre>
+<p>测试了几个编辑器，这两种方法总有一种方法是可以的。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bobvane.github.io/tag/HkBjgwLVLu/" class="tag">
+                    Blog
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bobvane.github.io/post/jian-cha-ip-ge-chong-shu-xing-de-wang-zhan/">
+                  <h3 class="post-title">
+                    检查IP各种属性的网站
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'Gridea',
+      apikey: '9eAsxAlzrFBgmupPXdr6ufasNsupUASroXjq14Gzr9JAZ5kPWejhjQQ7UT1kHubV',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

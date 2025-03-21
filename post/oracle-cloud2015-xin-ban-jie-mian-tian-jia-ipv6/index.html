@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Oracle Cloud2015新版界面添加IPv6 | BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1742535253393">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="IPv6具有比IPv4大得多的编码地址空间，彻底解决了IPv4地址不足的问题。同时，IPv6简化了地址配置、网络重编号和路由器通知等方面，从而提升了网络连接速度。此外，使用IPv6还可提高网络安全性，并降低网络延时。甲骨文Oracle Cl..." />
+    <meta name="keywords" content="VPS" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1742535253393" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://nz.bobvane.top/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Oracle Cloud2015新版界面添加IPv6</h2>
+            <div class="post-date">2025-03-17</div>
+            
+              <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/oracle-cloud2015-xin-ban-jie-mian-tian-jia-ipv6.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>IPv6具有比IPv4大得多的编码地址空间，彻底解决了IPv4地址不足的问题。同时，IPv6简化了地址配置、网络重编号和路由器通知等方面，从而提升了网络连接速度。此外，使用IPv6还可提高网络安全性，并降低网络延时。甲骨文Oracle Cloud 早就支持使用IPv6的资源。这篇文章中，我将引导您完成在最新版界面 Oracle 云环境中启用 IPv6 所需的所有步骤以及如何为您的 VPS 分配 IPV6 地址。</p>
+<p>一、给VCN添加 IPv6 CIDR块</p>
+<p>导航菜单–》网络–》虚拟云网络–》点击查看网络详情</p>
+<figure data-type="image" tabindex="1"><img src="https://bobvane.github.io/post-images/1742194581764.png" alt="" loading="lazy"></figure>
+<p>点击左侧 CIDR 块/前缀–》添加 CIDR 块/IPv6 前缀</p>
+<figure data-type="image" tabindex="2"><img src="https://bobvane.github.io/post-images/1742195214670.png" alt="" loading="lazy"></figure>
+<p>勾选 分配 Oracle 分配的 IPv6 /56 前缀 –》添加 CIDR 块/IPv6 前缀</p>
+<figure data-type="image" tabindex="3"><img src="https://bobvane.github.io/post-images/1742195352780.png" alt="" loading="lazy"></figure>
+<p>二、子网启用IPV6 CIDR块</p>
+<p><img src="https://bobvane.github.io/post-images/1742195473496.png" alt="" loading="lazy"><br>
+<img src="https://bobvane.github.io/post-images/1742195479405.png" alt="" loading="lazy"></p>
+<p><code>勾选 启用IPV6 CIDR块，输入任意 00-FF 之间的十六进制字符</code>，例如：aa 点击保存！</p>
+<figure data-type="image" tabindex="4"><img src="https://bobvane.github.io/post-images/1742195541385.png" alt="" loading="lazy"></figure>
+<p>三、添加路由规则</p>
+<p>您必须修改路由表才能通过 IPv6 访问任何内容。</p>
+<p>打开 路由表 -》 路由表详情 -》添加路由规则</p>
+<p><img src="https://bobvane.github.io/post-images/1742195704507.png" alt="" loading="lazy"><br>
+<img src="https://bobvane.github.io/post-images/1742195710818.png" alt="" loading="lazy"></p>
+<p>勾选：<code>IPv6</code><br>
+目标类型：<code>Internet网关</code><br>
+目的地 CIDR 块：<code>::/0</code></p>
+<p>四、配置安全组</p>
+<figure data-type="image" tabindex="5"><img src="https://bobvane.github.io/post-images/1742195786467.png" alt="" loading="lazy"></figure>
+<p>入站规则</p>
+<figure data-type="image" tabindex="6"><img src="https://bobvane.github.io/post-images/1742195866867.png" alt="" loading="lazy"></figure>
+<p>出站规则</p>
+<figure data-type="image" tabindex="7"><img src="https://bobvane.github.io/post-images/1742195873063.png" alt="" loading="lazy"></figure>
+<p>五、给实例配置ipv6</p>
+<p>查看服务器实例详情 , 选择你要添加IPv6的实例然后打开 – <code>附加的 VNIC – VNIC 详细信息 – IPv6 地址</code></p>
+<p><img src="https://bobvane.github.io/post-images/1742196063091.png" alt="" loading="lazy"><br>
+<img src="https://bobvane.github.io/post-images/1742196069361.png" alt="" loading="lazy"><br>
+<img src="https://bobvane.github.io/post-images/1742196075525.png" alt="" loading="lazy"></p>
+<p>至此网站上的配置就配置完了，只需在机器上重新获取IP即可使用IPv6了。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bobvane.github.io/tag/DF3pFzxSnl/" class="tag">
+                    VPS
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bobvane.github.io/post/chrome-he-xin-liu-lan-qi-jia-su-gong-ju-speedyfox/">
+                  <h3 class="post-title">
+                    Chrome核心浏览器加速工具SpeedyFox
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'Gridea',
+      apikey: '9eAsxAlzrFBgmupPXdr6ufasNsupUASroXjq14Gzr9JAZ5kPWejhjQQ7UT1kHubV',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1742535253393">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="BobVane的技术笔记">
+    
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1742535253393" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://nz.bobvane.top/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/windows-jing-jian-xi-tong-atlasos/">
+                  <h2 class="post-title">Windows精简系统AtlasOS</h2>
+                </a>
+                <div class="post-date">
+                  2025-02-21
+                </div>
+                <div class="post-abstract">
+                  <p>对 Windows 的修改，专为爱好者设计。<br>
+是时候体验全新的 Windows 了。Atlas 专为发烧友和游戏玩家设计，可提高隐私性、可用性和性能。<br>
+项目地址：<br>
+https://atlasos.net/<br>
+https://github.com/Atlas-OS/Atlas</p>
+<p>1、精简系统前提是安装好原版的Windows系统，在安装中：<br>
+Win11：安装到设置语言，随后选择键盘布局；<br>
+按 Shift+F10 打开命令提示符；<br>
+输入oobe\bypassnro，按 Enter，然后等待计算机重新启动（如使用Ventoy，则不需要此步骤）；<br>
+继续安装，但：不连接到internet，拒绝隐私部分中的每个选项。<br>
+Win10：完成设置，但请确保：<br>
+当提示连接到internet时，单击“我没有internet”；<br>
+点击“internet”页面后继续有限设置或域加入；<br>
+拒绝隐私部分中的每个选项；<br>
+拒绝Cortana。</p>
+<p>2、安装好硬件驱动并更新Windows系统，直到没有更多更新可用，这是为了确保Windows不会在运行Playbook后尝试安装更新，或者以其他方式干扰改进过程；</p>
+<p>3、下载AME Wizard程序安装，运行AME Wizard Beta.exe。<br>
+AME向导是一个修改Windows的终极工具。AtlasOS和ReviOS两个精简系统都是通过在AME里运行Playbook来达成Windows系统的优化。<br>
+AME主页：<br>
+https://ameliorated.io/<br>
+AME也有精简臃肿Win10和Win11的脚本，官方下载版本：<br>
+Win11：https://download.ameliorated.io/AME%2011%20Beta.apbx<br>
+Win10：https://download.ameliorated.io/AME%2010%20Beta.apbx<br>
+<img src="https://bobvane.github.io/post-images/1740109822229.png" alt="" loading="lazy"></p>
+<p>4、在atlasos.net网站上，单击“Get  Started Now”，然后单击-&gt; I'm following the guide,show me the downloads。的点击“Atlas Playbook”下载AtlasOS脚本并解压。</p>
+<p>5、如果选择了手动安装驱动程序，请从结业的Atlas Playbook脚本中运行Disable Drivers Installation in Windows Update.reg并重新启动。</p>
+<p>6、从AME  Wizard文件夹中运行AME Wizard Beta.exe，如果SmartScreen发出警告，指出AME Wizard是无法识别的应用程序，请单击“更多信息”绕过此警告，然后仍然运行。单击顶部的更新，并确保AME Wizard是最新版本。</p>
+<p>7、将 Atlas Playbook.apbx 从Atlas Playbook文件夹拖到AME Wizard中。</p>
+<p>8、按照AME Wizard的屏幕说明安装Atlas Playbook。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/windows-jing-jian-xi-tong-atlasos/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/windows-jing-jian-xi-tong-atlasos.webp')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/jing-jian-xi-tong-revios/">
+                  <h2 class="post-title">Windows精简系统ReviOS</h2>
+                </a>
+                <div class="post-date">
+                  2025-02-21
+                </div>
+                <div class="post-abstract">
+                  <p>ReviOS是Windows的定制版本，设计轻巧，稳定，和专注于提高性能，隐私和兼容性。它渴望重新创建Windows作为操作系统应该是什么-容易和简单。现在与AME向导兼容。</p>
+<p>项目地址：<br>
+https://www.revi.cc/<br>
+https://github.com/meetrevision/playbook</p>
+<p>1、精简系统前提是安装好原版的Windows系统后并更新Windows系统完毕，这是为了确保Windows不会在运行Playbook后尝试安装更新，或者以其他方式干扰改进过程。；</p>
+<p>2、下载AME Wizard程序安装，运行AME Wizard Beta.exe。<br>
+AME向导是一个修改Windows的终极工具。AtlasOS和ReviOS两个精简系统都是通过在AME里运行Playbook来达成Windows系统的优化。<br>
+AME主页：<br>
+https://ameliorated.io/<br>
+AME也有精简臃肿Win10和Win11的脚本，官方下载版本：<br>
+Win11：https://download.ameliorated.io/AME%2011%20Beta.apbx<br>
+Win10：https://download.ameliorated.io/AME%2010%20Beta.apbx<br>
+<img src="https://bobvane.github.io/post-images/1740109822229.png" alt="" loading="lazy"></p>
+<p>3、然后下载好ReviOS的.apbx结尾文件，比如：Revi-PB-24.12.apbx。然后将ReviOS的Playbook文件也就是.apbx文件拖放到AME Wizard软件界面左边的Playbooks列。加载后，根据需要按照屏幕上的所有说明进行操作，然后单击“下一步”继续。在下一页上，AME向导将检查您的系统是否满足必要的要求。根据需要按照屏幕上的说明准备系统。满足所有要求后，导航至下一页，并阅读许可协议。选择“下一步”&gt;“同意”，您将进入最后一页。在这里，您可以选择您选择的功能，或者单击下一步继续使用默认配置。一旦开始ReviOS脚本的设置，脚本将开始修改Windows。只需等待它完成，在重新启动后拥有ReviOS精简的Windows系统。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/jing-jian-xi-tong-revios/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/jing-jian-xi-tong-revios.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/ltsc-ban-ben-an-zhuang-wei-ruan-shang-dian-20212024/">
+                  <h2 class="post-title">LTSC版本安装微软商店2021/2024</h2>
+                </a>
+                <div class="post-date">
+                  2025-02-21
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/ltsc-ban-ben-an-zhuang-wei-ruan-shang-dian-20212024/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/ltsc-ban-ben-an-zhuang-wei-ruan-shang-dian-20212024.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/xia-zai-guan-fang-yuan-ban-windowsoffice/">
+                  <h2 class="post-title">下载官方原版Windows/Office</h2>
+                </a>
+                <div class="post-date">
+                  2025-02-21
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/xia-zai-guan-fang-yuan-ban-windowsoffice/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/xia-zai-guan-fang-yuan-ban-windowsoffice.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/ji-ge-jing-jian-windows-xi-tong/">
+                  <h2 class="post-title">几个精简Windows系统介绍</h2>
+                </a>
+                <div class="post-date">
+                  2025-02-19
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/ji-ge-jing-jian-windows-xi-tong/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/ji-ge-jing-jian-windows-xi-tong.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/ji-huo-wei-ruan-chan-pin-fang-an/">
+                  <h2 class="post-title">激活微软产品方案</h2>
+                </a>
+                <div class="post-date">
+                  2025-02-19
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/ji-huo-wei-ruan-chan-pin-fang-an/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/ji-huo-wei-ruan-chan-pin-fang-an.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/imageglass-shi-kai-yuan-mian-fei-wu-guang-gao-de-zhao-pian-cha-kan-qi/">
+                  <h2 class="post-title">ImageGlass是开源、免费、无广告的照片查看器</h2>
+                </a>
+                <div class="post-date">
+                  2025-03-21
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/oracle-cloud2015-xin-ban-jie-mian-tian-jia-ipv6/">
+                  <h2 class="post-title">Oracle Cloud2015新版界面添加IPv6</h2>
+                </a>
+                <div class="post-date">
+                  2025-03-17
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/oracle-cloud2015-xin-ban-jie-mian-tian-jia-ipv6/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/oracle-cloud2015-xin-ban-jie-mian-tian-jia-ipv6.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/chrome-he-xin-liu-lan-qi-jia-su-gong-ju-speedyfox/">
+                  <h2 class="post-title">Chrome核心浏览器加速工具SpeedyFox</h2>
+                </a>
+                <div class="post-date">
+                  2025-03-11
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://bobvane.github.io/post/ding-zhi-openwrt_build_x64-ruan-lu-you-xi-tong/">
+                  <h2 class="post-title">定制OpenWrt_Build_x64软路由系统</h2>
+                </a>
+                <div class="post-date">
+                  2025-03-09
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://bobvane.github.io/post/ding-zhi-openwrt_build_x64-ruan-lu-you-xi-tong/">
+                  <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/ding-zhi-openwrt_build_x64-ruan-lu-you-xi-tong.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+    <a href="https://bobvane.github.io/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
