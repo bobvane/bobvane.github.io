@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>使用rinetd部署矿池地址转发完整指南 | BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1743955185597">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="步骤1：SSH登录服务器
+ssh root@111.111.111.111 # 输入服务器密码登录
+步骤2：安装rinetd
+apt update &amp;&amp; apt install -y rinetd # 更新源并安装
+注意：如..." />
+    <meta name="keywords" content="挖矿" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1743955185597" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://nz.bobvane.top/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">使用rinetd部署矿池地址转发完整指南</h2>
+            <div class="post-date">2025-04-06</div>
+            
+              <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/shi-yong-rinetd-bu-shu-kuang-chi-di-zhi-zhuan-fa-wan-zheng-zhi-nan.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>步骤1：SSH登录服务器<br>
+<code>ssh root@111.111.111.111 # 输入服务器密码登录</code></p>
+<p>步骤2：安装rinetd<br>
+<code>apt update &amp;&amp; apt install -y rinetd # 更新源并安装</code><br>
+注意：如果提示权限不足，在命令前加sudo</p>
+<p>步骤3：配置转发规则<br>
+<code>nano /etc/rinetd.conf # 按Ctrl+O保存，Ctrl+X退出</code><br>
+输入以下内容：</p>
+<pre><code class="language-yaml"># 格式：监听IP 监听端口 目标地址 目标端口
+0.0.0.0 1818 bitcoin.viabtc.io 3333
+0.0.0.0 1618 bitcoin.viabtc.io 25  
+0.0.0.0 1888 bitcoin.viabtc.io 443
+0.0.0.0 1668 ca.zano.luckypool.io 8866
+0.0.0.0 1868 usa.hashvault.pro 443
+allow *.*.*.*  # 允许所有IP访问
+logfile /var/log/rinetd.log  # 启用日志记录
+</code></pre>
+<p>步骤4：开放防火墙端口</p>
+<pre><code class="language-yaml">ufw allow 1818/tcp  # 开放TCP端口
+systemctl restart ufw  # 重启防火墙生效
+</code></pre>
+<p>步骤5：启动转发服务</p>
+<pre><code class="language-yaml">systemctl restart rinetd  # 重启服务使配置生效
+systemctl enable rinetd  # 设置开机自启动
+</code></pre>
+<p>步骤6：验证服务状态<br>
+<code>ss -tulnp | grep 1818 # 应显示LISTEN状态</code><br>
+成功示例：<br>
+<code>tcp LISTEN 0 128 0.0.0.0:1818 0.0.0.0:* users:((&quot;rinetd&quot;,pid=1123,fd=3))</code></p>
+<p>步骤7：测试端口连通性<br>
+<code>telnet 111.111.111.111 1818 # 本地电脑执行测试</code><br>
+预期结果：显示Connected to 111.111.111.111</p>
+<p>步骤8：配置矿机参数<br>
+将矿机配置中的矿池地址改为：</p>
+<pre><code class="language-yaml">ViaBTC的BCH和BTC智能地址：stratum+tcp://111.111.111.111:1818
+ViaBTC的BCH和BTC智能地址：stratum+tcp://111.111.111.111:1618
+ViaBTC的BCH和BTC智能地址：stratum+tcp://111.111.111.111:1888
+LuckyPool的Zano地址：stratum+tcp://111.111.111.111:1668
+Hashvault的XMR地址：stratum+tcp://111.111.111.111:1868
+</code></pre>
+<p>注意保持钱包地址和矿工名不变</p>
+<p>步骤9：监控转发状态<br>
+<code>tail -f /var/log/rinetd.log # 实时查看转发日志</code><br>
+正常日志示例：<br>
+<code>08/Sep/2025:15:23:01 111.111.111.111:1818 bitcoin.viabtc.io:3333 200 1.5</code></p>
+<p>通过以上步骤，即使没有Linux基础的用户也能在10分钟内完成矿池转发配置。建议每季度检查一次/var/log/rinetd.log文件大小，超过100MB时执行truncate -s 0 /var/log/rinetd.log清理日志。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bobvane.github.io/tag/Nb4FmiVKQt/" class="tag">
+                    挖矿
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bobvane.github.io/post/imageglass-shi-kai-yuan-mian-fei-wu-guang-gao-de-zhao-pian-cha-kan-qi/">
+                  <h3 class="post-title">
+                    ImageGlass是开源、免费、无广告的照片查看器
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'Gridea',
+      apikey: '9eAsxAlzrFBgmupPXdr6ufasNsupUASroXjq14Gzr9JAZ5kPWejhjQQ7UT1kHubV',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
