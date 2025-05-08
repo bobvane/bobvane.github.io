@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>PeaNUT：网络不间断电源（UPS）的微型仪表板 | BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1746717117952">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="项目介绍：
+PeaNUT 是一个轻量级的网络不间断电源（UPS）监控工具，专为那些希望简便管理其UPS状态的用户设计。它通过Network UPS Tools（NUT）提供信息，显示关于UPS设备的关键数据，并允许在必要时进行交互。此项目采..." />
+    <meta name="keywords" content="Docker,Nas" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1746717117952" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://bobvane.github.io/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a><br>
+友情链接：<br>
+<a href="https://friend1.com" target="_blank">好友1</a><br>
+<a href="https://friend2.com" target="_blank">好友2</a><br>
+<a href="/links/" target="_blank">更多友链</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">PeaNUT：网络不间断电源（UPS）的微型仪表板</h2>
+            <div class="post-date">2025-02-21</div>
+            
+              <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/peanutwang-luo-bu-jian-duan-dian-yuan-upsde-wei-xing-yi-biao-ban.svg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>项目介绍：<br>
+PeaNUT 是一个轻量级的网络不间断电源（UPS）监控工具，专为那些希望简便管理其UPS状态的用户设计。它通过Network UPS Tools（NUT）提供信息，显示关于UPS设备的关键数据，并允许在必要时进行交互。此项目采用Apache-2.0许可证发布，支持通过Docker轻松部署或从源代码编译安装。<br>
+项目地址：<br>
+https://github.com/Brandawg93/PeaNUT</p>
+<p>项目快速启动<br>
+使用Docker部署<br>
+要快速启动PeaNUT，您可以利用Docker。只需执行以下命令：</p>
+<pre><code class="language-bash">docker run -v ${PWD}/config:/config -p 8080:8080 --restart unless-stopped \
+--env WEB_PORT=8080 brandawg93/peanut
+</code></pre>
+<p>或者使用docker-compose.yml配置文件来实现容器化部署：</p>
+<pre><code class="language-yaml">services:
+  peanut:
+    image: brandawg93/peanut:latest
+    container_name: PeaNUT
+    restart: unless-stopped
+    volumes:
+      - /path/to/config:/config
+    ports:
+      - 8080:8080
+    environment:
+      - WEB_PORT=8080
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://bobvane.github.io/post-images/1740120694981.png" alt="" loading="lazy"></figure>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bobvane.github.io/tag/F1z_Ije2px/" class="tag">
+                    Docker
+                  </a>
+                
+                  <a href="https://bobvane.github.io/tag/lksV0QZsx8/" class="tag">
+                    Nas
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bobvane.github.io/post/windows-jing-jian-xi-tong-atlasos/">
+                  <h3 class="post-title">
+                    Windows精简系统AtlasOS
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'Gridea',
+      apikey: '9eAsxAlzrFBgmupPXdr6ufasNsupUASroXjq14Gzr9JAZ5kPWejhjQQ7UT1kHubV',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

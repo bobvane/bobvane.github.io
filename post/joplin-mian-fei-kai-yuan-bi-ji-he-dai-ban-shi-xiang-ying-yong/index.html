@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Joplin免费开源笔记和待办事项应用 | BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1746717117952">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="项目地址：https://github.com/laurent22/joplin/
+Joplin是一个免费的开源笔记和待办事项应用程序，它可以处理大量组织成笔记本的笔记。笔记是可搜索的，可以直接从应用程序或您自己的文本编辑器复制，标记和修改..." />
+    <meta name="keywords" content="软件,Mac,iOS,安卓,Windows" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1746717117952" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://bobvane.github.io/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a><br>
+友情链接：<br>
+<a href="https://friend1.com" target="_blank">好友1</a><br>
+<a href="https://friend2.com" target="_blank">好友2</a><br>
+<a href="/links/" target="_blank">更多友链</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Joplin免费开源笔记和待办事项应用</h2>
+            <div class="post-date">2025-02-19</div>
+            
+              <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/joplin-mian-fei-kai-yuan-bi-ji-he-dai-ban-shi-xiang-ying-yong.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>项目地址：https://github.com/laurent22/joplin/</p>
+<p>Joplin是一个免费的开源笔记和待办事项应用程序，它可以处理大量组织成笔记本的笔记。笔记是可搜索的，可以直接从应用程序或您自己的文本编辑器复制，标记和修改。注释采用Markdown格式。<br>
+从Evernote导出的笔记可以导入到Joplin中，包括格式化的内容 (转换为Markdown)，资源 (图像，附件等)和完整的元数据 (地理位置，更新时间，创建时间等)。也可以导入纯Markdown文件。<br>
+Joplin是 “离线优先”，这意味着您始终将所有数据保存在手机或计算机上。这样可以确保您的笔记始终可以访问，无论您是否有互联网连接。<br>
+可以使用端到端加密与各种云服务 (包括Nextcloud，Dropbox，OneDrive和Joplin cloud) 安全地同步笔记。<br>
+全文搜索可在所有平台上快速找到您需要的信息。该应用程序可以使用插件和主题进行自定义，您也可以轻松创建自己的应用程序。<br>
+该应用程序可用于Windows，Linux，macOS，Android和iOS。用于保存浏览器中的网页和屏幕截图的Web裁剪器也可用于Firefox和Chrome。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bobvane.github.io/tag/9hJKMWuI1S/" class="tag">
+                    软件
+                  </a>
+                
+                  <a href="https://bobvane.github.io/tag/ZisieWgBfP/" class="tag">
+                    Mac
+                  </a>
+                
+                  <a href="https://bobvane.github.io/tag/CEchq01RMl/" class="tag">
+                    iOS
+                  </a>
+                
+                  <a href="https://bobvane.github.io/tag/5QHYPYBbxM/" class="tag">
+                    安卓
+                  </a>
+                
+                  <a href="https://bobvane.github.io/tag/cs5Mk6sRVA/" class="tag">
+                    Windows
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bobvane.github.io/post/kai-yuan-tong-bu-ssh-gong-ju-electermlinux-mac-win/">
+                  <h3 class="post-title">
+                    开源同步SSH工具Electerm(linux, mac, win)
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'Gridea',
+      apikey: '9eAsxAlzrFBgmupPXdr6ufasNsupUASroXjq14Gzr9JAZ5kPWejhjQQ7UT1kHubV',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
