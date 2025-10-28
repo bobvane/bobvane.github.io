@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>LTSC版本安装微软商店2021/2024 | BobVane的技术笔记</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://bobvane.github.io/favicon.ico?v=1761629239266">
+<link rel="stylesheet" href="https://bobvane.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22BNFJKRJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22BNFJKRJT');
+</script>
+
+
+    <meta name="description" content="Windows 11 LTSC 2024 安装微软商店项目地址：
+封装 Windows LTSC 版时，默认没有安装微软商店。
+使用wsreset -i确实能恢复微软商店，但是封装提示非所有用户安装导致封装报错。
+https://githu..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bobvane.github.io">
+        <img src="https://bobvane.github.io/images/avatar.png?v=1761629239266" class="site-logo">
+        <h1 class="site-title">BobVane的技术笔记</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            笔记
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/bobvane" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://x.com/bobvane007" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://bobvane.github.io/" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      BobVane的技术笔记
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://bobvane.github.io" target="_blank">BobVane Blog</a><br>
+友情链接：<br>
+<a href="https://friend1.com" target="_blank">好友1</a><br>
+<a href="https://friend2.com" target="_blank">好友2</a><br>
+<a href="/links/" target="_blank">更多友链</a> | <a class="rss" href="https://bobvane.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">LTSC版本安装微软商店2021/2024</h2>
+            <div class="post-date">2025-02-21</div>
+            
+              <div class="feature-container" style="background-image: url('https://bobvane.github.io/post-images/ltsc-ban-ben-an-zhuang-wei-ruan-shang-dian-20212024.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>Windows 11 LTSC 2024 安装微软商店项目地址：<br>
+封装 Windows LTSC 版时，默认没有安装微软商店。<br>
+使用wsreset -i确实能恢复微软商店，但是封装提示非所有用户安装导致封装报错。<br>
+https://github.com/IceLoveYer/LTSC-Add-MicrosoftStore<br>
+下载压缩包后解压；<br>
+1.确保Bat批处理(.bat文件)、PowerShell脚本(.ps1文件)、程序离线包在同一文件夹内；<br>
+2.双击或右键运行LTSC-Add-MicrosoftStore.bat会罗列匹配到的文件列表，确认后，按任意键继续安装；<br>
+3.顺利的话，你可以在开始菜单找到Microsoft Store应用程序。</p>
+<p>Add Windows Store for LTSC2021/2024项目地址：<br>
+https://github.com/R-YaTian/LTSC-Add-MicrosoftStore-2021_2024<br>
+下载压缩包解压后运行目录中的：<br>
+Add-Store.cmd</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bobvane.github.io/post/xia-zai-guan-fang-yuan-ban-windowsoffice/">
+                  <h3 class="post-title">
+                    下载官方原版Windows/Office
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'Gridea',
+      apikey: '9eAsxAlzrFBgmupPXdr6ufasNsupUASroXjq14Gzr9JAZ5kPWejhjQQ7UT1kHubV',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
